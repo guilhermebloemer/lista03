@@ -9,12 +9,35 @@
 
     //ENTRADA
 
-    let valorSaq = Number(prompt(`Qual o valor do saque? (valor minimo: 10 reais e valor maximo 600 reais)`))
+    let valorSaque = Number(prompt("Informe o valor do saque (mínimo R$ 10 e máximo R$ 600):"));
+    if (valorSaque < 10 || valorSaque > 600 || isNaN(valorSaque)) {
+        alert("Valor inválido! O valor deve ser entre R$ 10 e R$ 600.");
+    } else {
+        //PROCESSAMENTO
 
-    //PROCESSAMENTO
+        let notas100 = Math.floor(valorSaque / 100);
+        valorSaque %= 100;
 
-    
-    
-    //SAÍDA
+        let notas50 = Math.floor(valorSaque / 50);
+        valorSaque %= 50;
+
+        let notas10 = Math.floor(valorSaque / 10);
+        valorSaque %= 10;
+
+        let notas5 = Math.floor(valorSaque / 5);
+        valorSaque %= 5;
+
+        let notas1 = valorSaque; // O restante será em notas de 1
+
+        //SAÍDA
+        let resultado = `Notas a serem fornecidas:\n`;
+        if (notas100 > 0) resultado += `${notas100} nota(s) de R$ 100\n`;
+        if (notas50 > 0) resultado += `${notas50} nota(s) de R$ 50\n`;
+        if (notas10 > 0) resultado += `${notas10} nota(s) de R$ 10\n`;
+        if (notas5 > 0) resultado += `${notas5} nota(s) de R$ 5\n`;
+        if (notas1 > 0) resultado += `${notas1} nota(s) de R$ 1\n`;
+
+        alert(resultado);
+    }
 
 </script>

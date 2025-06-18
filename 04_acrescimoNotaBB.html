@@ -17,14 +17,17 @@
 
     //PROCESSAMENTO
 
-    const acrescimo = (notaAntes - notaDepois / 4)
+    let diferenca = notaDepois - notaAntes;
+    let acrescimo = 0;
+    if (diferenca > 0) {
+        acrescimo = diferenca / 4;
+    }
 
     //SAÍDA
+    if (acrescimo > 0) {
+        alert(`Você ganhou um acréscimo de: ${acrescimo} ponto(s) por ter ajudado o little brother`);
+    } else {
+        alert(`Não houve acréscimo na sua nota.`);
+    }
 
-    if (acrescimo) {
-        alert(`Voce ganhou um acrescimo de: ${acrescimo} ponto(s) por ter ajudado o little brother`)
-    }
-    else if (notaDepois)  {
-        alert(`A nota do little brother nao mudou`)
-    }
 </script>

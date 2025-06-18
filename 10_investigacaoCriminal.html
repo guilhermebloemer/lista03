@@ -1,4 +1,3 @@
-
 <script>
     /*
     PROBLEMA: INVESTIGAÇÃO CRIMINAL
@@ -13,10 +12,45 @@
 
     //ENTRADA
 
+    let pergunta1 = prompt("Telefonou para a vítima? (sim/não)").toLowerCase();
+    let pergunta2 = prompt("Esteve no local do crime? (sim/não)").toLowerCase();
+    let pergunta3 = prompt("Mora perto da vítima? (sim/não)").toLowerCase();
+    let pergunta4 = prompt("Devia para a vítima? (sim/não)").toLowerCase();
+    let pergunta5 = prompt("Já trabalhou com a vítima? (sim/não)").toLowerCase();
+
 
     //PROCESSAMENTO
+    let respostasPositivas = 0;
 
-    
+    if (pergunta1 === "sim") {
+        respostasPositivas = respostasPositivas + 1;
+    }
+    if (pergunta2 === "sim") {
+        respostasPositivas = respostasPositivas + 1;
+    }
+    if (pergunta3 === "sim") {
+        respostasPositivas = respostasPositivas + 1;
+    }
+    if (pergunta4 === "sim") {
+        respostasPositivas = respostasPositivas + 1;
+    }
+    if (pergunta5 === "sim") {
+        respostasPositivas = respostasPositivas + 1;
+    }
+
+    let classificacao = "";
+
+    if (respostasPositivas === 2) {
+        classificacao = "Suspeita";
+    } else if (respostasPositivas === 3 || respostasPositivas === 4) {
+        classificacao = "Cúmplice";
+    } else if (respostasPositivas === 5) {
+        classificacao = "Assassino";
+    } else {
+        classificacao = "Inocente";
+    }
+
     //SAÍDA
+    alert("Classificação: " + classificacao);
 
 </script>

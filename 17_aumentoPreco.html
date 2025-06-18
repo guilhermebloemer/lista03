@@ -11,8 +11,30 @@
 
     //ENTRADA
 
-    
-    //PROCESSAMENTO
+    let precoProduto = Number(prompt(`Informe o preço do produto:`));
+
+    if (isNaN(precoProduto) || precoProduto < 0) {
+        alert("Valor inválido! Informe um preço válido.");
+    } else {
+
+        //PROCESSAMENTO
+
+        let aumento;
+        if (precoProduto <= 280) {
+            aumento = precoProduto * 0.20; // 20%
+        } else if (precoProduto <= 700) {
+            aumento = precoProduto * 0.15; // 15%
+        } else if (precoProduto <= 1500) {
+            aumento = precoProduto * 0.10; // 10%
+        } else {
+            aumento = precoProduto * 0.05; // 5%
+        }
+
+        let novoPreco = precoProduto + aumento;
+
+        alert(`O preço do produto era R$ ${precoProduto.toFixed(2)} e com o aumento de R$ ${aumento.toFixed(2)}, agora é R$ ${novoPreco.toFixed(2)}.`);
+    }
+
 
     
     //SAÍDA

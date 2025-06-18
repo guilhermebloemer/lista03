@@ -7,9 +7,21 @@
 
     //ENTRADA
 
+    let numero = Number(prompt("Informe um número:").replace(",", "."));
 
     //PROCESSAMENTO
 
+    let resultado = "";
+    if (isNaN(numero)) {
+        resultado = "Valor inválido! Não é um número.";
+    } else {
+        if (Number.isInteger(numero)) {
+            resultado = `O número ${numero} é inteiro.`;
+        } else {
+            resultado = `O número ${numero} é decimal.`;
+        }
+    }
+    alert(resultado);
     
     //SAÍDA
 

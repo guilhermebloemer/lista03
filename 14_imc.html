@@ -18,7 +18,15 @@
 
     let imc = peso / altura ** 2
 
-    if (imc )
+    if (imc <= 18.5) {
+        document.write(`Seu IMC é ${imc.toFixed(2)}: Subpeso`);
+    } else if (imc <= 25.0) {
+        document.write(`Seu IMC é ${imc.toFixed(2)}: Normal`);
+    } else if (imc <= 30.0) {
+        document.write(`Seu IMC é ${imc.toFixed(2)}: Sobrepeso`);
+    } else {
+        document.write(`Seu IMC é ${imc.toFixed(2)}: Obeso`);
+    }
     
     //SAÍDA
 

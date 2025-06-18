@@ -5,23 +5,15 @@
     Em seguida, troque o valor das variáveis, invertendo e exibindo o antes e o depois em uma janela de alert.
     */
 
-    //ENTRADA
-
     let num1 = Number(prompt("Digite o primeiro número:"));
     let num2 = Number(prompt("Digite o segundo número:"));
 
+alert(`Antes da troca: num1 = ${num1}, num2 = ${num2}`);
 
+let temp = num1;
+num1 = num2;
+num2 = temp;
 
-
-    //PROCESSAMENTO
-
-    let temp = num1;
-    num1 = num2;
-    num2 = temp;
-    
-    alert(`Antes da troca: num1 = ${num1}, num2 = ${num2}`);
-    alert(`Depois da troca: num1 = ${num1}, num2 = ${num2}`);
-
-    //SAÍDA
+alert(`Depois da troca: num1 = ${num1}, num2 = ${num2}`);
 
 </script>
